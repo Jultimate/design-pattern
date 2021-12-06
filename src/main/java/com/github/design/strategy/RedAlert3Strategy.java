@@ -8,5 +8,5 @@ package com.github.design.strategy;
  */
 public interface RedAlert3Strategy {
 
-    void palyGame();
+    void palyGame(Player player);
 }

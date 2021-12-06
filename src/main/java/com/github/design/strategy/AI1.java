@@ -8,7 +8,7 @@ package com.github.design.strategy;
  */
 public class AI1 implements RedAlert3Strategy {
     @Override
-    public void palyGame() {
-        System.out.println("AI1选择旭日阵营");
+    public void palyGame(Player player) {
+        System.out.println("AI1选择旭日阵营与玩家" + player.name + "作战");
     }
 }

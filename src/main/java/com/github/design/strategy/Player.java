@@ -8,9 +8,19 @@ package com.github.design.strategy;
  */
 public class Player {
 
+    String name = "master";
+
+    String group;
+
+    public Player(){}
+
+    public Player(String group){
+        this.group = group;
+    }
+
     public static void main(String[] args){
-        StartGame.start(new AI1());
-        StartGame.start(new AI2());
-        StartGame.start(new AI3());
+        StartGame.start(new Player("旭日"));
+        StartGame.start(new Player("苏联"));
+        StartGame.start(new Player("盟军"));
     }
 }
