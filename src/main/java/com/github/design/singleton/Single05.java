@@ -16,5 +16,6 @@ public enum Single05 {
         for (int i = 0; i < 100; i++) {
             System.out.println(Single05.INSTANCE.hashCode());
         }
+        System.out.println(Single05.INSTANCE);
     }
 }
