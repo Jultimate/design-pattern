@@ -1,6 +1,5 @@
 package com.github.design.abstraction;
 
-import com.github.design.abstraction.AbstractGameFactory;
 import com.github.design.abstraction.game.ARPG;
 import com.github.design.abstraction.game.CallOfDuty;
 import com.github.design.abstraction.game.FPS;

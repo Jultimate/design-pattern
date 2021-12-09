@@ -15,6 +15,10 @@ public class Single04 {
         private static final Single04 INSTANCE = new Single04();
     }
 
+    public static Single04 getInstance(){
+        return Single.INSTANCE;
+    }
+
     public static void main(String[] args){
         Single04 instance = Single.INSTANCE;
     }

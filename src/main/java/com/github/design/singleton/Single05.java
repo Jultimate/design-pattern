@@ -1,5 +1,8 @@
 package com.github.design.singleton;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * @Description: enum singleton
  * @Author: CHONG
@@ -12,10 +15,14 @@ public enum Single05 {
 
     public void a(){}
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         for (int i = 0; i < 100; i++) {
             System.out.println(Single05.INSTANCE.hashCode());
         }
+        Class<Single05> clazz = Single05.class;
+        Constructor<Single05> constructor = clazz.getConstructor();
+        constructor.setAccessible(true);
+        constructor.newInstance();
         System.out.println(Single05.INSTANCE);
     }
 }
