@@ -5,4 +5,9 @@ public class PwdFilter implements Filter {
     public boolean doFilter(User user) {
         return "PWD_FROM_SQL".equals(user.pwd);
     }
+
+    @Override
+    public boolean doFilter(Request req, Response res,FilterChain chain) {
+        return false;
+    }
 }

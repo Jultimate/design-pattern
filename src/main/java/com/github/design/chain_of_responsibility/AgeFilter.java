@@ -6,4 +6,9 @@ public class AgeFilter implements Filter {
         return 18 >= user.age;
     }
 
+    @Override
+    public boolean doFilter(Request req, Response res,FilterChain chain) {
+        return false;
+    }
+
 }

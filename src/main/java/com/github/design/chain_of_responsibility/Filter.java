@@ -1,5 +1,10 @@
 package com.github.design.chain_of_responsibility;
 
 public interface Filter {
-    boolean doFilter(User user);
+    default boolean doFilter(User user){
+        return true;
+    }
+
+
+    boolean doFilter(Request req, Response res ,FilterChain chain);
 }

@@ -5,4 +5,9 @@ public class AuthFilter implements Filter {
     public boolean doFilter(User user) {
         return "ADMIN".equals(user.role);
     }
+
+    @Override
+    public boolean doFilter(Request req, Response res,FilterChain chain) {
+        return false;
+    }
 }
