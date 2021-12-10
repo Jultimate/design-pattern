@@ -11,7 +11,7 @@ public class CategoryTree {
         for (int i = 0; i < depth; i++) {
             System.out.print("== ");
         }
-        System.out.println(">" + category.name);
+        System.out.println(category.name);
         if (category.categorys != null) {
             for (Category categoryL : category.categorys) {
                 tree(categoryL, depth + 1);
