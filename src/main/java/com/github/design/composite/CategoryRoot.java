@@ -13,11 +13,4 @@ public class CategoryRoot extends Category {
     public CategoryRoot() {
         super("ROOT");
     }
-
-    final List<Category1> category1s = new ArrayList<>();
-
-    public void add(Category1 category1) {
-        category1s.add(category1);
-    }
-
 }
