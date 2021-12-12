@@ -1,7 +1,7 @@
 package com.github.design.dynamic_proxy;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Description:
@@ -29,13 +29,22 @@ public class Car implements Moveable {
 
         moveable.move();
 
-        Stop stop = (Stop) Proxy.newProxyInstance(Stop.class.getClassLoader(), new Class[]{Stop.class}, ((proxy, method, args1) -> {
+        AtomicInteger i = new AtomicInteger();
+
+        Stop stop = (Stop) Proxy.newProxyInstance(Stop.class.getClassLoader(), new Class[]{Moveable.class,Stop.class}, ((proxy, method, args1) -> {
+            if(i.getAndIncrement() < 10){
+                System.out.println(proxy.toString() + "DDD");
+            }
             System.out.println("Engine shutdown......");
             if (method.getName().equals("stop")) {
                 System.out.println("Stopped......");
             }
+
+            System.out.println("invoke method = " + method.getName());
             return null;
         }));
+
+        stop.stop();
 
     }
 
