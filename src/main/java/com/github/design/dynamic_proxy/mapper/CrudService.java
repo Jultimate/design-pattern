@@ -4,6 +4,7 @@ import java.lang.reflect.Proxy;
 import java.util.Objects;
 
 public class CrudService {
+    
     private UserMapper userMapper;
 
     public User queryById(Long userId) {
