@@ -1,5 +1,6 @@
 package com.github.design.dynamic_proxy;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
@@ -28,15 +29,14 @@ public class Car implements Moveable {
 
         moveable.move();
 
-        Stop stop = (Stop)Proxy.newProxyInstance(Stop.class.getClassLoader(),new Class<?>[]{Stop.class},((proxy, method, args1) -> {
-           System.out.println("Engine shutdown......");
-           if(method.getName().equals("stop")){
-               System.out.println("Stopped......");
-           }
-           return null;
+        Stop stop = (Stop) Proxy.newProxyInstance(Stop.class.getClassLoader(), new Class[]{Stop.class}, ((proxy, method, args1) -> {
+            System.out.println("Engine shutdown......");
+            if (method.getName().equals("stop")) {
+                System.out.println("Stopped......");
+            }
+            return null;
         }));
 
-        stop.stop();
     }
 
 }

@@ -11,5 +11,9 @@ public class BranTest {
         Bran bran = new Bran();
         Car car = bran.getCar("NISSAN");
         car.drive();
+        Car car1 = bran.getCar("NISSAN");
+        if(car == car1){
+            System.out.println("equals");
+        }
     }
 }

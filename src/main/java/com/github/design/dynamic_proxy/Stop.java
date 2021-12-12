@@ -6,7 +6,7 @@ package com.github.design.dynamic_proxy;
  * @CreateTime: 2021/12/11 20:38
  * @Email: chongzhao66@gmail.com
  */
-public interface Stop {
+public interface Stop extends Moveable{
 
     void stop();
 }

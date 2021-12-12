@@ -23,6 +23,7 @@ public class Bran {
         Car car = myCars.get(name);
         if (car == null) {
             car = CarFactory.buyCar(name);
+            myCars.put(name, car);
         }
         return car;
     }
